@@ -1,10 +1,30 @@
-.navbar {
-    background-color: #ea3d63
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+h2,
+h3 {
+    display: inline;
+    text-align: justify;
 }
 
-.social {
-    margin-right: 0.5rem;
+ul {
+    list-style-type: none;
+    /* no default bullets */
 }
+
+/* ____________________________ */
+.navbar {
+    background-color: #ff3b63; /*#ea3d63*/
+}
+
+/* .social {
+    margin-right: 0.5rem;
+} */
 .access{
     background-color: #9e3685;
 }
@@ -13,7 +33,7 @@
     color: white;
 }
 
-img {
+.navbar img {
     height: 2.5rem;
     /*alto*/
     margin: 0.2rem;
@@ -29,8 +49,7 @@ img {
 }
 div ul {
     display: flex;
-    justify-content: space-around;
-    
+    justify-content: space-around;  
 }
 #education div ul {
     display: flex;
@@ -55,7 +74,6 @@ div ul li a {
         justify-content: space-evenly;
         /* flex-direction: column; */
         align-items: center;
-        /*margin-bottom: 0.2em;*/
         flex-wrap: wrap;
     }
 
@@ -65,10 +83,8 @@ div ul li a {
 
     div ul{
         display: flex;
-        /* justify-content: space-evenly; */
+        justify-content: space-around;
         align-items: center;
-        /* padding-left: 5px; */
-        /* padding-right: 5px; */
         flex-wrap: wrap;
     }
 }
@@ -76,24 +92,24 @@ div ul li a {
 /* _______BANNER________ */
 
 .img-banner {
-    width: 100%;
+    width: 80%;
     height: auto;
 }
-
 /* __________Persona_______________ */
 .row {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     /* padding: 2rem; */
     /* background-color:#ea3d63; */
     /* border: 0.5rem dotted #ea3d63; */
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 #person{
     margin-top: 0.5rem;
     padding: 1rem;
-    border: 0.5rem dotted #ea3d63;
+    border: 0.5rem dotted #ff3b63; /*#ea3d63;*/
 }
 
 .col-sm-2,
@@ -115,7 +131,7 @@ div ul li a {
 @media (min-width: 576px) {
     #myphoto {
         border-radius: 50%;
-        box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem #ea3d63;
+        box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem #ff3b63; /* #ea3d63;*/
         /* position: absolute;*/
         
     }
@@ -124,16 +140,16 @@ div ul li a {
         max-width: 90%;
     }
 
-    #myname {
+    /* #myname {
         margin-top: 3rem;
     }
-    
+     */
 }
 
 @media (max-width: 575px) {
     #myphoto {
         border-radius: 50%;
-        box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem #ea3d63;
+        box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem #ff3b63; /*#ea3d63;*/
         position: relative;
     }
 
@@ -155,26 +171,19 @@ div ul li a {
 #education{
     margin-top: 0.5rem;
     padding: 2rem;
+    padding-bottom: 0rem;
     border: 0.5rem dotted #5330a9;
 }
 
-h2,
-h3 {
-    display: inline;
-    text-align: justify;
-}
+
 .study{
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     text-decoration: underline; /*#5330a9;*/
 }
-ul .cursos {
-    list-style-type: none;
-    /* no default bullets */
-}
 
 .edu-img{
-    max-width: 7rem; 
+    max-width: 12rem; 
     height: auto; 
     position: relative;
     margin: 1rem auto;
@@ -191,3 +200,104 @@ ul .cursos {
     height: .5em;
     width: .5em;
 }
+
+/* ______Experiencia_______________________ */
+#works{
+    margin-top: 0.5rem;
+    padding: 2rem;
+    padding-bottom: 0rem;
+    border: 0.5rem dotted #993688;
+}
+
+ul .exp:before {
+    content: "";
+    background-color: #993688;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: -1.6em;
+    margin-bottom: 0.5em;
+    margin-right: 1em;
+    height: .5em;
+    width: .5em;
+}
+.exp p{
+    text-align: justify;
+}
+
+/* ______Habilidades_______________________ */
+#skills{
+    margin-top: 0.5rem;
+    padding: 2rem;
+    border: 0.5rem dotted #993688;
+}
+
+.container{
+    /* display: flex;
+    width: 50em;
+    padding: 50px 0;
+    border-radius: 8px;
+    background: #009de6;
+    row-gap: 1em;
+    flex-direction: column;
+    align-items: center; */
+    display: flex;
+    width: 12em;
+    padding: 1em 0;
+    border-radius: 2em;
+    background: #009de6;
+    row-gap: 0.5em;
+    flex-direction: column;
+    align-items: center;
+}
+.circular-progress{
+    position: relative;
+    height: 8em;
+    width: 8em;
+    border-radius: 50%;
+    /* background-color: #ea3d63; */
+    background: conic-gradient(#ff3b63 3.6deg, #fdeef1 0deg);/*(#ea3d63 3.6deg, #fdeef1 0deg);*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-progress::before{
+    /* content: "";
+    position: absolute;
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+    background-color: #fff; */
+    content: "";
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    border-radius: 50%;
+    background-color: #fff;
+    
+}
+.progress-value{
+    position: relative;
+    font-size: 40px;
+    font-weight: 600;
+    color: #ff3b63; /*-#ea3d63;*/
+}
+
+.text{
+    font-size: 30px;
+    font-weight: 500;
+    color: #993688;
+}
+
+/* .d-flex{
+    justify-content: center
+}
+
+.titlecont{
+    display: flex;
+    align-items: center;
+} */
+
+/*Colores rosa #dd3c69 #ea3d63 #e93d63 ff3b63
+          azul #512ea9 #5330a9 #502fa8; 
+          lila #9e3685 #993688 #953588*/
