@@ -95,8 +95,9 @@
 
 // var contenido = document.querySelector('#contenido')
 var myname = document.getElementById('myname')
-var avatar = document.getElementById('avatar')
+var myphoto = document.getElementById('myphoto')
 var email = document.getElementById('email')
+var cell = document.getElementById('cell')
 // var ocupation = document.getElementById('ocupation')
 
 let url = 'https://randomuser.me/api/?gender=female'    /*origen de los datos*/
@@ -104,17 +105,17 @@ let person;
 fetch(url)                              /* Realizamos una solicitud a esta url*/
     .then(res => res.json())           /* Se resuelve la promesa y la pasa a formato json*/
     .then(data => {
-        console.log("hola pues")
-        person = data
-        console.log(person.results['0'])   /**lo mostramos por consola */
-        console.log(data.results['0'])
-
-        avatar.innerHTML = `<img id="myphoto" class="img-fluid" src="${data.results['0'].picture.large}"
-             alt="foto de ${data.results['0'].name.first} ${data.results['0'].name.last} propietari@ de este portfolio.">`
+        // console.log("hola pues")
+        console.log(data.results['0'])   /**lo mostramos por consola */
+        
+        let img_api = data.results['0'].picture.large
+        myphoto.setAttribute("src",img_api);
 
         myname.innerHTML = `${data.results['0'].name.first} ${data.results['0'].name.last}`
 
         email.innerHTML = `${data.results['0'].email}`
+
+        cell.innerHTML = `Cel: ${data.results['0'].cell}`
         
     })
     .catch(error => console.log(error))

@@ -9,12 +9,8 @@
     background-color: #9e3685;
 }
 
-#nav{
+.nav-link{
     color: white;
-}
-#logoargprog {
-    height: 5rem;
-    /*alto*/
 }
 
 img {
@@ -36,6 +32,11 @@ div ul {
     justify-content: space-around;
     
 }
+#education div ul {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
 
 div ul li a {
     font-size: 14px;
@@ -43,18 +44,18 @@ div ul li a {
     text-align: center
 }
 
-/* Para la vista desde un celular*/
+/* Para la vista desde un celular - barra navegación*/
 @media (max-width: 575px) {
-    .container-fluid {
+    /* .container-fluid {
         flex-direction: column;
-    }
+    } */
 
     .social {
         display: flex;
         justify-content: space-evenly;
         /* flex-direction: column; */
         align-items: center;
-        margin-bottom: 0.2em;
+        /*margin-bottom: 0.2em;*/
         flex-wrap: wrap;
     }
 
@@ -62,12 +63,12 @@ div ul li a {
         margin: 0.2em;
     }
 
-    nav ul{
+    div ul{
         display: flex;
-        justify-content: space-evenly;
+        /* justify-content: space-evenly; */
         align-items: center;
-        padding-left: 5px;
-        padding-right: 5px;
+        /* padding-left: 5px; */
+        /* padding-right: 5px; */
         flex-wrap: wrap;
     }
 }
@@ -82,15 +83,22 @@ div ul li a {
 /* __________Persona_______________ */
 .row {
     margin-top: 1rem;
-    padding: 2rem;
+    /* padding: 2rem; */
     /* background-color:#ea3d63; */
-    border: 0.5rem dotted #ea3d63;
+    /* border: 0.5rem dotted #ea3d63; */
     display: flex;
     align-items: center;
 }
 
+#person{
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border: 0.5rem dotted #ea3d63;
+}
+
 .col-sm-2,
-.col-sm-4 {
+.col-sm-4,
+.col-sm-5 {
     text-align-last: center;
 }
 
@@ -109,7 +117,7 @@ div ul li a {
         border-radius: 50%;
         box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem #ea3d63;
         /* position: absolute;*/
-        /* display: block; */
+        
     }
 
     .img-fluid {
@@ -119,6 +127,7 @@ div ul li a {
     #myname {
         margin-top: 3rem;
     }
+    
 }
 
 @media (max-width: 575px) {
@@ -126,7 +135,6 @@ div ul li a {
         border-radius: 50%;
         box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem #ea3d63;
         position: relative;
-        /* display: block; */
     }
 
     #myname {
@@ -136,4 +144,50 @@ div ul li a {
     .img-fluid {
         max-width: 80%;
     }
+    #avatar{
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        }
+}
+/* _________Educación_________________ */
+
+#education{
+    margin-top: 0.5rem;
+    padding: 2rem;
+    border: 0.5rem dotted #5330a9;
+}
+
+h2,
+h3 {
+    display: inline;
+    text-align: justify;
+}
+.study{
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    text-decoration: underline; /*#5330a9;*/
+}
+ul .cursos {
+    list-style-type: none;
+    /* no default bullets */
+}
+
+.edu-img{
+    max-width: 7rem; 
+    height: auto; 
+    position: relative;
+    margin: 1rem auto;
+}
+
+ ul .cursos:before {
+    content: "";
+    background-color: #993688;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: -1.6em;
+    margin-bottom: 0.5em;
+    margin-right: 1em;
+    height: .5em;
+    width: .5em;
 }
