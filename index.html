@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Portfolio MOLINA</title>
+    <title>Portfolio - CV</title>
     <link rel="stylesheet" href="css/estilos.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -42,46 +42,38 @@
                 <li class="nav"><a class="nav-link" href="#projects">PROYECTOS</a></li>
             </ul>
         </div>
-        <div class="row">
-            <div>
-                <img class="img-banner" src="../Images/computer%20programming.png"
-                    alt="Foto de —Pngtree—computer programming_5399562.">
+        <div class="container-fluid">
+            <div class="row">
+                <div>
+                    <img class="img-banner" src="../Images/computer%20programming.png"
+                        alt="Foto de —Pngtree—computer programming_5399562.">
+                </div>
             </div>
         </div>
 
     </div>
     <section id="sectionaboutme">
         <div class="container-fluid" id="main-container">
-            <div *ngFor="let person of persons">
-                <div class="row">
-                    <div *ngIf="isAdmin" class="float-right btn-group btn-group-sm">
-                        <a (click)="onOpenModal('add', undefined)" class="boton btn-plus" data-original-title="Add"><i
-                                class="fa fa-plus"></i></a>
-                        <!-- Aquí tenemos el BOTÓN con el lapicito para editar "fa fa pencil" -->
-                        <a (click)="onOpenModal('edit',person)" class="boton btn-edit" data-original-title="Edit"><i
-                                class="fa fa-pencil"></i></a>
-                        <!-- y aquí el BOTÓN para eliminar "fa fa-times" -->
-                        <a (click)="onOpenModal('delete', person)" class="boton btn-delete"
-                            data-original-title="Delete"><i class="fa fa-times"></i></a>
-                    </div>
-                    <div class="col-xs-12 col-sm-3">
-                        <img id="myphoto" class="img-fluid" src="{{person.imageurl}}"
-                            alt="foto de {{results.name.first}} {{results.name.last}}, propietaria de este portfolio.">
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <h4 id="myname">{{person?.name}} {{person?.lastname}}</h4>
-                        <p>{{person?.ocupation}}</p>
-                        <p>{{person?.email}}</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-5">
-                        <h1 class="titlesection"><span>ACERCA DE MÍ</span></h1>
-                        <p>{{person?.aboutmedescription}}</p>
-                    </div>
-
+            <div class="row" id="person">
+                <div class="col-xs-12 col-sm-3" id="avatar">
+                    <!-- <img  class="img-fluid" src=´${data.results['0'].picture.large}´
+                        alt="foto propietari@ de este portfolio."> -->
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <h4 id="myname"></h4>
+                    <p id="ocupation">Front-End Developer Jr</p>
+                    <p id="email">{{person?.email}}</p>
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                    <h1 class="titlesection"><span>ACERCA DE MÍ</span></h1>
+                    <p>Trabajo individual/equipo - Responsable - Dedicada - Metódica - Solidaria</p>
                 </div>
             </div>
-        </div>
+            <!-- </div> -->
     </section>
+
+
+    <script src="js/funcion.js"></script>
 </body>
 
 </html>
