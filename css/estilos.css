@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 h2,
 h3 {
     display: inline;
@@ -17,19 +18,30 @@ ul {
     /* no default bullets */
 }
 
+p {
+    margin-bottom: 0;
+}
+
+.cursos p{
+    margin-bottom: 0.5rem;
+}
+.firma p {
+    text-align: center;
+}
 /* ____________________________ */
 .navbar {
-    background-color: #ff3b63; /*#ea3d63*/
+    background-color: #ff3b63;
+    /*#ea3d63*/
 }
 
 /* .social {
     margin-right: 0.5rem;
 } */
-.access{
+.access {
     background-color: #9e3685;
 }
 
-.nav-link{
+.nav-link {
     color: white;
 }
 
@@ -44,13 +56,18 @@ ul {
     /*borde del boton*/
     margin-left: 1rem;
 }
-.direct{
+
+.direct {
     text-align: center;
+    margin-bottom: 0rem;
+    padding: 0rem;
 }
+
 div ul {
     display: flex;
-    justify-content: space-around;  
+    justify-content: space-around;
 }
+
 #education div ul {
     display: flex;
     justify-content: space-around;
@@ -64,10 +81,11 @@ div ul li a {
 }
 
 /* Para la vista desde un celular - barra navegación*/
+/* hasta este tamaño, de 0 a 575*/
 @media (max-width: 575px) {
-    /* .container-fluid {
+    .container-fluid {
         flex-direction: column;
-    } */
+    }
 
     .social {
         display: flex;
@@ -81,7 +99,7 @@ div ul li a {
         margin: 0.2em;
     }
 
-    div ul{
+    div ul {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -89,67 +107,75 @@ div ul li a {
     }
 }
 
+
 /* _______BANNER________ */
 
 .img-banner {
     width: 80%;
     height: auto;
 }
+
 /* __________Persona_______________ */
 .row {
-    /* margin-top: 1rem; */
-    /* padding: 2rem; */
-    /* background-color:#ea3d63; */
-    /* border: 0.5rem dotted #ea3d63; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#person{
+#person {
     margin-top: 0.5rem;
     padding: 1rem;
-    border: 0.5rem dotted #ff3b63; /*#ea3d63;*/
+    border: 0.5rem dotted #ff3b63;
+    /*#ea3d63;*/
 }
 
 .col-sm-2,
 .col-sm-4,
 .col-sm-5 {
-    text-align-last: center;
+    text-align: center;
+}
+
+description-me{
+    text-align: center;
 }
 
 #myname {
     font-weight: bold;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .titlesection {
     text-align: center;
+}
+#avatar{
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Estilo de la foto de perfil */
 @media (min-width: 576px) {
     #myphoto {
         border-radius: 50%;
-        box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem #ff3b63; /* #ea3d63;*/
+        box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem #ff3b63;
+        /* #ea3d63;*/
         /* position: absolute;*/
-        
+
     }
 
     .img-fluid {
         max-width: 90%;
     }
 
-    /* #myname {
-        margin-top: 3rem;
-    }
-     */
+    
 }
 
 @media (max-width: 575px) {
     #myphoto {
         border-radius: 50%;
-        box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem #ff3b63; /*#ea3d63;*/
+        box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem #ff3b63;
+        /*#ea3d63;*/
         position: relative;
     }
 
@@ -160,41 +186,43 @@ div ul li a {
     .img-fluid {
         max-width: 80%;
     }
-    #avatar{
+
+    #avatar {
         display: grid;
         justify-items: center;
         align-items: center;
-        }
+    }
 }
+
 /* _________Educación_________________ */
 
-#education{
+#education {
     margin-top: 0.5rem;
     padding: 2rem;
     padding-bottom: 0rem;
     border: 0.5rem dotted #5330a9;
 }
 
-
-.study{
+.study {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    text-decoration: underline; /*#5330a9;*/
+    text-decoration: underline;
+    /*#5330a9;*/
 }
 
-.edu-img{
-    max-width: 12rem; 
-    height: auto; 
+.edu-img {
+    max-width: 12rem;
+    height: auto;
     position: relative;
     margin: 1rem auto;
 }
 
- ul .cursos:before {
+ul .cursos::before {
     content: "";
     background-color: #993688;
     border-radius: 50%;
     display: inline-block;
-    margin-left: -1.6em;
+    margin-left: -1.7em;
     margin-bottom: 0.5em;
     margin-right: 1em;
     height: .5em;
@@ -202,7 +230,7 @@ div ul li a {
 }
 
 /* ______Experiencia_______________________ */
-#works{
+#works {
     margin-top: 0.5rem;
     padding: 2rem;
     padding-bottom: 0rem;
@@ -220,18 +248,19 @@ ul .exp:before {
     height: .5em;
     width: .5em;
 }
-.exp p{
+
+.exp p {
     text-align: justify;
 }
 
 /* ______Habilidades_______________________ */
-#skills{
+#skills {
     margin-top: 0.5rem;
     padding: 2rem;
     border: 0.5rem dotted #993688;
 }
 
-.container{
+.container {
     /* display: flex;
     width: 50em;
     padding: 50px 0;
@@ -242,26 +271,29 @@ ul .exp:before {
     align-items: center; */
     display: flex;
     width: 12em;
-    padding: 1em 0;
+    padding: 0.5rem 0;
     border-radius: 2em;
-    background: #009de6;
+    background: #ff3b63;     /*#7a7a7a;*/
     row-gap: 0.5em;
     flex-direction: column;
     align-items: center;
+    margin: 0.5rem;
 }
-.circular-progress{
+
+.circular-progress {
     position: relative;
     height: 8em;
     width: 8em;
     border-radius: 50%;
     /* background-color: #ea3d63; */
-    background: conic-gradient(#ff3b63 3.6deg, #fdeef1 0deg);/*(#ea3d63 3.6deg, #fdeef1 0deg);*/
+    background: conic-gradient(#9e3685 3.6deg, #fdeef1 0deg);
+    /*(#ea3d63 3.6deg, #fdeef1 0deg);*/
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.circular-progress::before{
+.circular-progress::before {
     /* content: "";
     position: absolute;
     height: 10em;
@@ -274,19 +306,68 @@ ul .exp:before {
     width: 6em;
     border-radius: 50%;
     background-color: #fff;
-    
+
 }
-.progress-value{
+
+.progress-value {
     position: relative;
     font-size: 40px;
     font-weight: 600;
-    color: #ff3b63; /*-#ea3d63;*/
+    color: #ff3b63;
+    /*-#ea3d63;*/
 }
 
-.text{
+.text {
     font-size: 30px;
     font-weight: 500;
-    color: #993688;
+    color: #fff      /*#606060 #993688;*/
+}
+
+/* _____________Footer________________ */
+.firma {
+    justify-items: center;
+}
+
+#footer {
+    padding-top: .5rem;
+}
+
+.footer {
+    background-color: #ff3b63;
+    color: white;
+    font-size: 0.9rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* #footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+.footer img {
+    height: 2.5rem;
+    /*alto*/
+    margin: 0.2rem;
+}
+
+@media (max-width: 575px) {
+    .footer {
+        flex-direction: column-reverse;
+    }
+}
+
+/* _________Projects_________________ */
+#projects{
+    margin-top: 0.5rem;
+    padding: 2rem;
+    border: 0.5rem dotted #ff3b63;
+}
+.project-img{
+    position: relative;
+    margin: 1rem auto;
 }
 
 /* .d-flex{

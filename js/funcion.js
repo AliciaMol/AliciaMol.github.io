@@ -34,7 +34,7 @@ let progressStartValue = 0,
 let progress = setInterval(() => {
     progressStartValue++;
     progressValue.textContent = `${progressStartValue}%`
-    circularProgress.style.background = `conic-gradient(#ea3d63 ${progressStartValue * 3.6}deg, #fdeef1 0deg)`
+    circularProgress.style.background = `conic-gradient(#9e3685 ${progressStartValue * 3.6}deg, #fdeef1 0deg)`
     // console.log(progressStartValue);
     if (progressStartValue == progressEndValue) {
         clearInterval(progress);
