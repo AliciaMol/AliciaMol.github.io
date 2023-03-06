@@ -25,18 +25,76 @@ fetch(url)                              /* Realizamos una solicitud a esta url*/
 
 
 /** ---------------Circular progress---------------*/
-let circularProgress = document.querySelector(".circular-progress"),
-    progressValue = document.querySelector(".progress-value");
-let progressStartValue = 0,
-    progressEndValue = 45,
-    speed = 100;
+// let circularProgress = document.querySelector(".circular-progress"),
+//     progressValue = document.querySelector(".progress-value");
+// let progressStartValue = 0,
+//     progressEndValue = progressValue.outerText,
+//     speed = 100;
 
-let progress = setInterval(() => {
-    progressStartValue++;
-    progressValue.textContent = `${progressStartValue}%`
-    circularProgress.style.background = `conic-gradient(#9e3685 ${progressStartValue * 3.6}deg, #fdeef1 0deg)`
-    // console.log(progressStartValue);
-    if (progressStartValue == progressEndValue) {
-        clearInterval(progress);
-    }
-}, speed);
+// let progress = setInterval(() => {
+//     progressStartValue++;
+//     progressValue.textContent = `${progressStartValue}%`
+//     circularProgress.style.background = `conic-gradient(#9e3685 ${progressStartValue * 3.6}deg, #fdeef1 0deg)`
+//     // console.log(progressStartValue);
+//     if (progressStartValue == progressEndValue) {
+//         clearInterval(progress);
+//     }
+// }, speed);
+
+let mySkills = document.getElementsByClassName('mySkill')
+for (let i = 0; i < mySkills.length; i++) {
+    let circularProgress = mySkills[i].children[0],
+        progressValue = mySkills[i].children[0].children[0];
+    let progressStartValue = 0,
+        progressEndValue = progressValue.outerText,
+        speed = 100;
+     let progress = setInterval(() => {
+     progressStartValue++;
+     progressValue.textContent = `${progressStartValue}%`
+     circularProgress.style.background = `conic-gradient(#9e3685 ${progressStartValue * 3.6}deg, #fdeef1 0deg)`
+     // console.log(progressStartValue);
+     if (progressStartValue == progressEndValue) {
+         clearInterval(progress);
+     }
+ }, speed);
+
+
+
+        console.log(mySkills[i].children[0]);
+
+    // console.log(mySkills[i].childNodes[0]);
+    console.log(i);
+    console.log("CONTAINER se consigue con classList[0]");
+    console.log(mySkills[i].classList[0]);
+    console.log("circular-progress se consigue con .children[0]");
+    console.log(mySkills[i].children[0]);
+
+    console.log("progress-value se consigue con childNodes[0].className");
+    console.log(mySkills[i].children[0].children[0].className);
+    console.log("valor final de habilidad");
+    //console.log(parseInt(mySkills[i].children[0].textContent));
+    console.log(mySkills[i].children[0].children[0].textContent);
+    console.log("habilidad");
+    console.log(mySkills[i].children[1].textContent);
+
+
+
+
+
+    // console.log(progresoCircular);
+    //console.log("MI PRUEBA:")
+    //console.log(mySkills);
+    // let progressStartValue = 0,
+    //     progressEndValue = progressValue.outerText,
+    //     speed = 100;
+
+    // let progress = setInterval(() => {
+    //     progressStartValue++;
+    //     progressValue.textContent = `${progressStartValue}%`
+    //     circularProgress.style.background = `conic-gradient(#9e3685 ${progressStartValue * 3.6}deg, #fdeef1 0deg)`
+    //     // console.log(progressStartValue);
+    //     if (progressStartValue == progressEndValue) {
+    //         clearInterval(progress);
+    //     }
+    // }, speed);
+}

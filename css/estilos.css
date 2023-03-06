@@ -214,7 +214,8 @@ description-me{
     max-width: 12rem;
     height: auto;
     position: relative;
-    margin: 1rem auto;
+    margin: 0.5rem auto;
+    justify-content: space-around;
 }
 
 ul .cursos::before {
@@ -311,14 +312,14 @@ ul .exp:before {
 
 .progress-value {
     position: relative;
-    font-size: 40px;
+    font-size: 2em;
     font-weight: 600;
     color: #ff3b63;
     /*-#ea3d63;*/
 }
 
 .text {
-    font-size: 30px;
+    font-size: 1.3em;
     font-weight: 500;
     color: #fff      /*#606060 #993688;*/
 }
@@ -370,6 +371,9 @@ ul .exp:before {
     margin: 1rem auto;
 }
 
+#projects p{
+    text-align: justify;
+}
 /* .d-flex{
     justify-content: center
 }
