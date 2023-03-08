@@ -11,8 +11,7 @@ let person;
 fetch(url)                              /* Realizamos una solicitud a esta url*/
     .then(res => res.json())           /* Se resuelve la promesa y la pasa a formato json*/
     .then(data => {
-        // console.log("hola pues")
-        console.log(data.results['0'])   /**lo mostramos por consola */
+        // console.log(data.results['0'])   /**lo mostramos por consola */
 
         let img_api = data.results['0'].picture.large
         myphoto.setAttribute("src", img_api);
@@ -48,53 +47,104 @@ for (let i = 0; i < mySkills.length; i++) {
     let progressStartValue = 0,
         progressEndValue = progressValue.outerText,
         speed = 100;
-     let progress = setInterval(() => {
-     progressStartValue++;
-     progressValue.textContent = `${progressStartValue}%`
-     circularProgress.style.background = `conic-gradient(#9e3685 ${progressStartValue * 3.6}deg, #fdeef1 0deg)`
-     // console.log(progressStartValue);
-     if (progressStartValue == progressEndValue) {
-         clearInterval(progress);
-     }
- }, speed);
-
-
-
-        console.log(mySkills[i].children[0]);
-
-    // console.log(mySkills[i].childNodes[0]);
-    console.log(i);
-    console.log("CONTAINER se consigue con classList[0]");
-    console.log(mySkills[i].classList[0]);
-    console.log("circular-progress se consigue con .children[0]");
-    console.log(mySkills[i].children[0]);
-
-    console.log("progress-value se consigue con childNodes[0].className");
-    console.log(mySkills[i].children[0].children[0].className);
-    console.log("valor final de habilidad");
-    //console.log(parseInt(mySkills[i].children[0].textContent));
-    console.log(mySkills[i].children[0].children[0].textContent);
-    console.log("habilidad");
-    console.log(mySkills[i].children[1].textContent);
-
-
-
-
-
-    // console.log(progresoCircular);
-    //console.log("MI PRUEBA:")
-    //console.log(mySkills);
-    // let progressStartValue = 0,
-    //     progressEndValue = progressValue.outerText,
-    //     speed = 100;
-
-    // let progress = setInterval(() => {
-    //     progressStartValue++;
-    //     progressValue.textContent = `${progressStartValue}%`
-    //     circularProgress.style.background = `conic-gradient(#9e3685 ${progressStartValue * 3.6}deg, #fdeef1 0deg)`
-    //     // console.log(progressStartValue);
-    //     if (progressStartValue == progressEndValue) {
-    //         clearInterval(progress);
-    //     }
-    // }, speed);
+    let progress = setInterval(() => {
+        progressStartValue++;
+        progressValue.textContent = `${progressStartValue}%`
+        circularProgress.style.background = `conic-gradient(#9e3685 ${progressStartValue * 3.6}deg, #fdeef1 0deg)`
+        // console.log(progressStartValue);
+        if (progressStartValue == progressEndValue) {
+            clearInterval(progress);
+        }
+    }, speed);
 }
+
+/* ---------FORM CONTACTO ---------- */
+
+(function () {
+
+    'use strict';
+
+    // Form
+
+    var contactForm = function () {
+
+        if ($('#contactForm').length > 0) {
+            $("#contactForm").validate({
+                rules: {
+                    name: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    message: {
+                        required: true,
+                        minlength: 5
+                    }
+                },
+                messages: {
+                    name: "Por favor, ingrese su nombre",
+                    apellido: "Por favor, ingrese su apellido",
+                    email: "Por favor, ingrese su email",
+                    message: "Por favor ingrese un mensaje"
+                },
+                /* submit via ajax */
+                submitHandler: function (form) {
+                    var $submit = $('.submitting'),
+                        waitText = 'Submitting...';
+
+                    $.ajax({
+                        type: "POST",
+                        url: "php/send-email.php",
+                        data: $(form).serialize(),
+
+                        beforeSend: function () {
+                            $submit.css('display', 'block').text(waitText);
+                        },
+                        success: function (msg) {
+                            if (msg == 'OK') {
+                                $('#form-message-warning').hide();
+                                setTimeout(function () {
+                                    $('#contactForm').fadeOut();
+                                }, 1000);
+                                setTimeout(function () {
+                                    $('#form-message-success').fadeIn();
+                                }, 1400);
+
+                            } else {
+                                $('#form-message-warning').html(msg);
+                                $('#form-message-warning').fadeIn();
+                                $submit.css('display', 'none');
+                            }
+                        },
+                        error: function () {
+                            $('#form-message-warning').html("Something went wrong. Please try again.");
+                            $('#form-message-warning').fadeIn();
+                            $submit.css('display', 'none');
+                        }
+                    });
+                }
+
+            });
+        }
+    };
+    contactForm();
+
+});
+
+
+// console.log(mySkills[i].children[0]);
+
+// // console.log(mySkills[i].childNodes[0]);
+// console.log(i);
+// console.log("CONTAINER se consigue con classList[0]");
+// console.log(mySkills[i].classList[0]);
+// console.log("circular-progress se consigue con .children[0]");
+// console.log(mySkills[i].children[0]);
+
+// console.log("progress-value se consigue con childNodes[0].className");
+// console.log(mySkills[i].children[0].children[0].className);
+// console.log("valor final de habilidad");
+// //console.log(parseInt(mySkills[i].children[0].textContent));
+// console.log(mySkills[i].children[0].children[0].textContent);
+// console.log("habilidad");
+// console.log(mySkills[i].children[1].textContent);
