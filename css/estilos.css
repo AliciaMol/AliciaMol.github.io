@@ -56,6 +56,7 @@ p {
 .btn {
     border-width: medium;
     /*borde del boton*/
+    text-transform: uppercase;
     margin-left: 1rem;
 }
 
@@ -500,22 +501,22 @@ label.error {
     resize: vertical;
 }
 
-#form-message-warning,
+/* #form-message-warning,
 #form-message-success {
     display: none;
-}
+} */
 
-#form-message-warning {
+/* #form-message-warning {
     color: #B90B0B;
-}
+} */
 
-#form-message-success {
+/* #form-message-success {
     color: #55A44E;
     font-size: 18px;
     font-weight: bold;
-}
+} */
 
-.submitting {
+/* .submitting {
     float: left;
     width: 100%;
     padding: 10px 0;
@@ -523,7 +524,7 @@ label.error {
     font-weight: bold;
     font-size: 12px;
     color: #000;
-}
+} */
 
 .msj{
     padding-right: 0;
@@ -541,6 +542,7 @@ label.error {
 
 #contact .btn.btn-outline-light{
     background-color: #ff3b63;
+    text-transform: uppercase;
 }
 
 .send{
